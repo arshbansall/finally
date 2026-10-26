@@ -1,0 +1,6 @@
+{
+  "enabledPlugins": {
+    "superdesign@anthropic-plugin-directory": true,
+    "playwright@anthropic-plugin-directory": true
+  }
+}
