@@ -1,0 +1,50 @@
+# Keep the build context small and free of secrets / local state.
+
+# VCS & editor / agent config
+.git
+.gitignore
+.claude
+.vscode
+.idea
+**/.DS_Store
+
+# Secrets (passed at runtime via --env-file)
+.env
+.env.*
+!.env.example
+
+# Runtime data (the SQLite volume)
+db/
+**/*.db
+**/*.db-journal
+**/*.db-wal
+**/*.db-shm
+
+# Frontend build artifacts & deps (rebuilt inside the image)
+**/node_modules
+frontend/.next
+frontend/out
+frontend/coverage
+frontend/*.tsbuildinfo
+
+# Python artifacts & venvs (rebuilt inside the image)
+**/.venv
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/.coverage
+backend/static
+backend/tests
+
+# Not needed in the image
+test/
+planning/
+scripts/
+deploy/
+Dockerfile
+docker-compose*.yml
+*.md
+!frontend/**/*.md
+LICENSE

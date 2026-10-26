@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+  background: #0d1117;
+  color: #d8dee8;
+}
+
+body {
+  font-family: Archivo, ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Every number in the terminal is set in tabular figures so columns don't jitter. */
+.num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Narrow width for tickers and panel titles: dense, terminal-like. */
+.narrow {
+  font-stretch: 78%;
+}
+
+/* Price flash: highlight snaps on, then fades out when the class is removed. */
+.price-cell {
+  transition: background-color 600ms ease-out, color 600ms ease-out;
+}
+.price-cell.flash-up {
+  background-color: rgba(38, 179, 107, 0.28);
+  color: #ecfff4;
+  transition: none;
+}
+.price-cell.flash-down {
+  background-color: rgba(229, 72, 77, 0.28);
+  color: #fff1f1;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .price-cell {
+    transition: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #263142;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+:focus-visible {
+  outline: 2px solid #209dd7;
+  outline-offset: 1px;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.dot-pulse {
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dot-pulse {
+    animation: none;
+  }
+}

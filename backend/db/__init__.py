@@ -1,0 +1,53 @@
+"""FinAlly SQLite persistence layer. See planning/CONTRACT.md §3.2."""
+
+from .connection import (
+    DEFAULT_CASH_BALANCE,
+    DEFAULT_USER_ID,
+    DEFAULT_WATCHLIST,
+    get_connection,
+    get_db_path,
+    init_db,
+    transaction,
+)
+from .repository import (
+    add_watchlist_ticker,
+    delete_position,
+    get_cash_balance,
+    get_chat_messages,
+    get_position,
+    get_positions,
+    get_snapshots,
+    get_trades,
+    get_watchlist,
+    insert_chat_message,
+    insert_snapshot,
+    insert_trade,
+    remove_watchlist_ticker,
+    set_cash_balance,
+    upsert_position,
+)
+
+__all__ = [
+    "DEFAULT_CASH_BALANCE",
+    "DEFAULT_USER_ID",
+    "DEFAULT_WATCHLIST",
+    "add_watchlist_ticker",
+    "delete_position",
+    "get_cash_balance",
+    "get_chat_messages",
+    "get_connection",
+    "get_db_path",
+    "get_position",
+    "get_positions",
+    "get_snapshots",
+    "get_trades",
+    "get_watchlist",
+    "init_db",
+    "insert_chat_message",
+    "insert_snapshot",
+    "insert_trade",
+    "remove_watchlist_ticker",
+    "set_cash_balance",
+    "transaction",
+    "upsert_position",
+]
